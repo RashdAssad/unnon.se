@@ -11,7 +11,7 @@ Focus on scaffolding the Next.js app and integrating the design system.
 - [x] **Task: Integrate shadcn/ui** 1ecf1e3
   - [ ] Write Tests: Verify shadcn CLI initialization and component pathing.
   - [ ] Implement: Initialize shadcn/ui and add initial components (Button, Input, Card).
-- [ ] **Task: Establish Global Layout**
+- [~] **Task: Establish Global Layout**
   - [ ] Write Tests: Verify presence of Header, Footer, and Main content area in the DOM.
   - [ ] Implement: Create `layout.tsx` with a responsive navigation bar and brand identity.
 - [ ] Task: Conductor - User Manual Verification 'Phase 1: Project Initialization & UI Setup' (Protocol in workflow.md)

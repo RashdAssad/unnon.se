@@ -5,7 +5,7 @@ This track initializes the project and builds the core UI for the Generator Mode
 ## Phase 1: Project Initialization & UI Setup
 Focus on scaffolding the Next.js app and integrating the design system.
 
-- [ ] **Task: Initialize Next.js Project**
+- [x] **Task: Initialize Next.js Project** 6a27136
   - [ ] Write Tests: Verify project structure and basic environment variables.
   - [ ] Implement: Run `npx create-next-app` with TypeScript, Tailwind, and ESLint.
 - [ ] **Task: Integrate shadcn/ui**

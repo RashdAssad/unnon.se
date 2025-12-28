@@ -1,0 +1,4 @@
+Task: Initialize Next.js Project
+Summary: Manually scaffolded a Next.js 14+ project with TypeScript, Tailwind CSS, and ESLint to avoid interactive prompts. Set up Vitest with jsdom for testing. Created initial layout and page components.
+Files: package.json, tsconfig.json, tailwind.config.ts, postcss.config.mjs, src/app/*, vitest.config.ts, .gitignore
+Why: Establish the foundation for the AI Website Replicator & Generator project with a robust testing environment.

@@ -8,7 +8,7 @@ Focus on scaffolding the Next.js app and integrating the design system.
 - [x] **Task: Initialize Next.js Project** 6a27136
   - [ ] Write Tests: Verify project structure and basic environment variables.
   - [ ] Implement: Run `npx create-next-app` with TypeScript, Tailwind, and ESLint.
-- [~] **Task: Integrate shadcn/ui**
+- [x] **Task: Integrate shadcn/ui** 1ecf1e3
   - [ ] Write Tests: Verify shadcn CLI initialization and component pathing.
   - [ ] Implement: Initialize shadcn/ui and add initial components (Button, Input, Card).
 - [ ] **Task: Establish Global Layout**

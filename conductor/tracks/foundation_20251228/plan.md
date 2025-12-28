@@ -13,7 +13,7 @@ Focus on scaffolding the Next.js app and integrating the design system.
 ## Phase 2: Generator Mode UI
 Focus on the interactive prompt interface.
 
-- [~] **Task: Create Generator Interface**
+- [x] **Task: Create Generator Interface** 212621e
   - [ ] Write Tests: Verify prompt input existence and submit button behavior.
   - [ ] Implement: Build the `GeneratorView` component with a large text prompt area and "Generate" button.
 - [ ] **Task: Implement Generation State Management**

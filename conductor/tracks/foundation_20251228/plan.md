@@ -2,19 +2,13 @@
 
 This track initializes the project and builds the core UI for the Generator Mode.
 
-## Phase 1: Project Initialization & UI Setup
+## Phase 1: Project Initialization & UI Setup [checkpoint: ca72a52]
 Focus on scaffolding the Next.js app and integrating the design system.
 
 - [x] **Task: Initialize Next.js Project** 6a27136
-  - [ ] Write Tests: Verify project structure and basic environment variables.
-  - [ ] Implement: Run `npx create-next-app` with TypeScript, Tailwind, and ESLint.
 - [x] **Task: Integrate shadcn/ui** 1ecf1e3
-  - [ ] Write Tests: Verify shadcn CLI initialization and component pathing.
-  - [ ] Implement: Initialize shadcn/ui and add initial components (Button, Input, Card).
 - [x] **Task: Establish Global Layout** f971213
-  - [ ] Write Tests: Verify presence of Header, Footer, and Main content area in the DOM.
-  - [ ] Implement: Create `layout.tsx` with a responsive navigation bar and brand identity.
-- [ ] Task: Conductor - User Manual Verification 'Phase 1: Project Initialization & UI Setup' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 1: Project Initialization & UI Setup' (Protocol in workflow.md)
 
 ## Phase 2: Generator Mode UI
 Focus on the interactive prompt interface.

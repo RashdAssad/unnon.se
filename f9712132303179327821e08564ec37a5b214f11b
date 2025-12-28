@@ -1,0 +1,4 @@
+Task: Establish Global Layout
+Summary: Created Header and Footer components with responsive navigation. Updated RootLayout to include these components and established a basic app structure with a sticky header and a main content area.
+Files: src/components/Header.tsx, src/components/Footer.tsx, src/app/layout.tsx
+Why: Provide a consistent user experience and navigation across the entire application.

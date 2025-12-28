@@ -1,0 +1,4 @@
+Task: Create Generator Interface
+Summary: Implemented the core Generator Mode interface including a large prompt textarea (using shadcn Textarea) and a 'Generate' button. Updated the landing page hero section to introduce the tool and integrated the GeneratorView.
+Files: src/components/GeneratorView.tsx, src/components/ui/textarea.tsx, src/app/page.tsx, src/components/GeneratorView.test.tsx
+Why: Provide users with the primary entry point for site generation via natural language prompts.

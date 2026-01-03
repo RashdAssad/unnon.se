@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react'
-import { LayoutContent } from './layout'
+import RootLayout, { LayoutContent } from './layout'
 import { expect, test, vi } from 'vitest'
 
 // Mock the Inter font since it's used in the layout
@@ -19,4 +19,15 @@ test('LayoutContent renders header and footer', () => {
   expect(screen.getByRole('banner')).toBeInTheDocument() // Header
   expect(screen.getByRole('contentinfo')).toBeInTheDocument() // Footer
   expect(screen.getByText('Content')).toBeInTheDocument()
+})
+
+test('RootLayout renders children correctly', () => {
+  render(
+    <RootLayout>
+      <div data-testid="child">Root Content</div>
+    </RootLayout>
+  )
+  
+  expect(screen.getByTestId('child')).toBeInTheDocument()
+  expect(screen.getByText('Root Content')).toBeInTheDocument()
 })

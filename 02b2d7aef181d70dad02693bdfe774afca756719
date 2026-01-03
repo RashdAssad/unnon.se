@@ -1,0 +1,12 @@
+Task Name: Generator Mode UI Implementation
+Summary: Implemented the interactive prompt interface for the generator, including state management for loading/completion and a mock result preview card.
+Created Files:
+- src/components/PreviewCard.tsx
+- src/components/PreviewCard.test.tsx
+- src/components/ui/textarea.tsx
+Modified Files:
+- src/components/GeneratorView.tsx
+- src/components/GeneratorView.test.tsx
+- src/app/page.tsx
+- vitest.config.ts
+Why: To provide users with a functional UI to input prompts and see a representation of the generated website.

@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react'
-import RootLayout from './layout'
+import { LayoutContent } from './layout'
 import { expect, test, vi } from 'vitest'
 
 // Mock the Inter font since it's used in the layout
@@ -9,11 +9,11 @@ vi.mock('next/font/google', () => ({
   }),
 }))
 
-test('RootLayout renders header and footer', () => {
+test('LayoutContent renders header and footer', () => {
   render(
-    <RootLayout>
+    <LayoutContent>
       <div>Content</div>
-    </RootLayout>
+    </LayoutContent>
   )
   
   expect(screen.getByRole('banner')).toBeInTheDocument() // Header

@@ -14,14 +14,14 @@ Focus on scaffolding the Next.js app and integrating the design system.
 Focus on the interactive prompt interface.
 
 - [x] **Task: Create Generator Interface** 212621e
-  - [ ] Write Tests: Verify prompt input existence and submit button behavior.
-  - [ ] Implement: Build the `GeneratorView` component with a large text prompt area and "Generate" button.
-- [ ] **Task: Implement Generation State Management**
-  - [ ] Write Tests: Verify loading states and transition to "complete" state.
-  - [ ] Implement: Use React state to handle input, loading animations, and the display of a mock result.
-- [ ] **Task: Mock Result Preview**
-  - [ ] Write Tests: Verify that the preview area displays the mock result correctly.
-  - [ ] Implement: Create a `PreviewCard` component to show a representation of the "generated" site.
+  - [x] Write Tests: Verify prompt input existence and submit button behavior.
+  - [x] Implement: Build the `GeneratorView` component with a large text prompt area and "Generate" button.
+- [x] **Task: Implement Generation State Management**
+  - [x] Write Tests: Verify loading states and transition to "complete" state.
+  - [x] Implement: Use React state to handle input, loading animations, and the display of a mock result.
+- [x] **Task: Mock Result Preview**
+  - [x] Write Tests: Verify that the preview area displays the mock result correctly.
+  - [x] Implement: Create a `PreviewCard` component to show a representation of the "generated" site.
 - [ ] Task: Conductor - User Manual Verification 'Phase 2: Generator Mode UI' (Protocol in workflow.md)
 
 ## Phase 3: Polish & Standards

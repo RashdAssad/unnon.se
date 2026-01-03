@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Sparkles, Loader2 } from "lucide-react"
+import PreviewCard from "./PreviewCard"
 
 type GenerationStatus = "idle" | "generating" | "completed"
 
@@ -27,52 +28,57 @@ export default function GeneratorView() {
 
   return (
     <div className="container py-10">
-      <Card className="max-w-3xl mx-auto">
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <Sparkles className="w-5 h-5 text-primary" />
-            Generator Mode
-          </CardTitle>
-          <CardDescription>
-            Describe your vision, and our AI will scaffold a complete Next.js website for you.
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          {status === "completed" ? (
-             <div className="flex flex-col items-center justify-center py-6 space-y-4 text-center animate-in fade-in zoom-in duration-500">
-                <div className="text-2xl font-bold text-green-600">Generation Complete!</div>
-                <p className="text-muted-foreground">Here is your generated website.</p>
-                <Button variant="outline" onClick={() => setStatus("idle")}>Generate Another</Button>
+      <div className="max-w-3xl mx-auto space-y-8">
+        <Card>
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <Sparkles className="w-5 h-5 text-primary" />
+              Generator Mode
+            </CardTitle>
+            <CardDescription>
+              Describe your vision, and our AI will scaffold a complete Next.js website for you.
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <Textarea 
+              placeholder="Describe the website you want to build (e.g., 'A modern landing page for a SaaS startup with a pricing table and testimonial section')"
+              className="min-h-[150px] resize-none"
+              value={prompt}
+              onChange={(e) => setPrompt(e.target.value)}
+              disabled={isGenerating}
+            />
+            <div className="flex justify-end">
+              <Button 
+                size="lg" 
+                onClick={handleGenerate} 
+                disabled={isGenerating || !prompt.trim()}
+              >
+                {isGenerating ? (
+                  <>
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                    Generating...
+                  </>
+                ) : (
+                  "Generate Website"
+                )}
+              </Button>
+            </div>
+          </CardContent>
+        </Card>
+
+        {status === "completed" && (
+           <div className="space-y-4">
+             <div className="flex items-center justify-between">
+                <h2 className="text-xl font-semibold">Generated Result</h2>
+                <Button variant="ghost" size="sm" onClick={() => setStatus("idle")}>Clear Result</Button>
              </div>
-          ) : (
-            <>
-              <Textarea 
-                placeholder="Describe the website you want to build (e.g., 'A modern landing page for a SaaS startup with a pricing table and testimonial section')"
-                className="min-h-[150px] resize-none"
-                value={prompt}
-                onChange={(e) => setPrompt(e.target.value)}
-                disabled={isGenerating}
-              />
-              <div className="flex justify-end">
-                <Button 
-                  size="lg" 
-                  onClick={handleGenerate} 
-                  disabled={isGenerating || !prompt.trim()}
-                >
-                  {isGenerating ? (
-                    <>
-                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                      Generating...
-                    </>
-                  ) : (
-                    "Generate Website"
-                  )}
-                </Button>
-              </div>
-            </>
-          )}
-        </CardContent>
-      </Card>
+             <PreviewCard 
+               title="Generated Project" 
+               description={`Based on: "${prompt.substring(0, 50)}${prompt.length > 50 ? '...' : ''}"`} 
+             />
+           </div>
+        )}
+      </div>
     </div>
   )
 }

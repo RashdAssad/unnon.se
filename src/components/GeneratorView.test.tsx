@@ -16,6 +16,8 @@ test('GeneratorView handles generation state', async () => {
 
   // Wait for mock generation to complete
   await waitFor(() => {
-    expect(screen.getByText(/generation complete/i)).toBeInTheDocument()
+    expect(screen.getByText(/generated result/i)).toBeInTheDocument()
+    expect(screen.getByText(/generated project/i)).toBeInTheDocument()
+    expect(screen.getByRole('img', { name: /preview/i })).toBeInTheDocument()
   }, { timeout: 4000 })
 })

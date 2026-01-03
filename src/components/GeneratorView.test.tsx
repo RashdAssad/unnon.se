@@ -1,9 +1,21 @@
-import { render, screen } from '@testing-library/react'
+import { render, screen, fireEvent, waitFor } from '@testing-library/react'
 import GeneratorView from './GeneratorView'
 import { expect, test } from 'vitest'
 
-test('GeneratorView renders prompt input and generate button', () => {
+test('GeneratorView handles generation state', async () => {
   render(<GeneratorView />)
-  expect(screen.getByPlaceholderText(/describe the website you want to build/i)).toBeInTheDocument()
-  expect(screen.getByRole('button', { name: /generate/i })).toBeInTheDocument()
+  const textarea = screen.getByPlaceholderText(/describe the website you want to build/i)
+  const button = screen.getByRole('button', { name: /generate/i })
+
+  fireEvent.change(textarea, { target: { value: 'Test prompt' } })
+  fireEvent.click(button)
+
+  expect(button).toHaveTextContent(/generating/i)
+  expect(button).toBeDisabled()
+  expect(textarea).toBeDisabled()
+
+  // Wait for mock generation to complete
+  await waitFor(() => {
+    expect(screen.getByText(/generation complete/i)).toBeInTheDocument()
+  }, { timeout: 4000 })
 })

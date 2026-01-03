@@ -10,19 +10,19 @@ Focus on scaffolding the Next.js app and integrating the design system.
 - [x] **Task: Establish Global Layout** f971213
 - [x] Task: Conductor - User Manual Verification 'Phase 1: Project Initialization & UI Setup' (Protocol in workflow.md)
 
-## Phase 2: Generator Mode UI
+## Phase 2: Generator Mode UI [checkpoint: cf6df87]
 Focus on the interactive prompt interface.
 
 - [x] **Task: Create Generator Interface** 212621e
   - [x] Write Tests: Verify prompt input existence and submit button behavior.
   - [x] Implement: Build the `GeneratorView` component with a large text prompt area and "Generate" button.
-- [x] **Task: Implement Generation State Management**
+- [x] **Task: Implement Generation State Management** 212621e
   - [x] Write Tests: Verify loading states and transition to "complete" state.
   - [x] Implement: Use React state to handle input, loading animations, and the display of a mock result.
-- [x] **Task: Mock Result Preview**
+- [x] **Task: Mock Result Preview** 212621e
   - [x] Write Tests: Verify that the preview area displays the mock result correctly.
   - [x] Implement: Create a `PreviewCard` component to show a representation of the "generated" site.
-- [ ] Task: Conductor - User Manual Verification 'Phase 2: Generator Mode UI' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 2: Generator Mode UI' (Protocol in workflow.md)
 
 ## Phase 3: Polish & Standards
 Ensure the codebase is clean and meets all requirements.

@@ -31,3 +31,8 @@ Ensure the codebase is clean and meets all requirements.
   - [x] Write Tests: Ensure comprehensive coverage for all new components.
   - [x] Implement: Run linting, type checks, and refactor for clarity. Ensure mobile responsiveness.
 - [ ] Task: Conductor - User Manual Verification 'Phase 3: Polish & Standards' (Protocol in workflow.md)
+
+## Unplanned Work & Known Issues
+- [ ] **Task: Investigate node-pty Crash**
+  - [ ] Context: `Error: Cannot resize a pty that has already exited` in `windowsPtyAgent.js`.
+  - [ ] Goal: Identify triggers (resize events during commits/heavy output) and implement mitigation (e.g., avoiding interactive resizing, stabilizing shell commands).

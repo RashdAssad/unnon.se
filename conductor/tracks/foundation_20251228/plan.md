@@ -33,6 +33,7 @@ Ensure the codebase is clean and meets all requirements.
 - [ ] Task: Conductor - User Manual Verification 'Phase 3: Polish & Standards' (Protocol in workflow.md)
 
 ## Unplanned Work & Known Issues
-- [ ] **Task: Investigate node-pty Crash**
-  - [ ] Context: `Error: Cannot resize a pty that has already exited` in `windowsPtyAgent.js`.
-  - [ ] Goal: Identify triggers (resize events during commits/heavy output) and implement mitigation (e.g., avoiding interactive resizing, stabilizing shell commands).
+- [x] **Task: Investigate node-pty Crash**
+  - [x] Context: `Error: Cannot resize a pty that has already exited` in `windowsPtyAgent.js`.
+  - [x] Goal: Identify triggers (resize events during commits/heavy output) and implement mitigation (e.g., avoiding interactive resizing, stabilizing shell commands).
+  - [x] Resolution: Confirmed commit `3009549` succeeded. Crash caused by terminal resize during command execution. No code changes needed. Mitigation: User advised to avoid resizing window during heavy CLI operations.

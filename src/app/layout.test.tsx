@@ -9,6 +9,13 @@ vi.mock('next/font/google', () => ({
   }),
 }))
 
+// Mock localFont
+vi.mock('next/font/local', () => ({
+  default: () => ({
+    variable: '--font-klaxon-mock',
+  }),
+}))
+
 test('LayoutContent renders header and footer', () => {
   render(
     <LayoutContent>

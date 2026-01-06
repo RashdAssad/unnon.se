@@ -24,13 +24,13 @@ Focus on the interactive prompt interface.
   - [x] Implement: Create a `PreviewCard` component to show a representation of the "generated" site.
 - [x] Task: Conductor - User Manual Verification 'Phase 2: Generator Mode UI' (Protocol in workflow.md)
 
-## Phase 3: Polish & Standards
+## Phase 3: Polish & Standards [checkpoint: 9d7b056]
 Ensure the codebase is clean and meets all requirements.
 
 - [x] **Task: Final Quality Gate & Refactoring** 563c2e8
   - [x] Write Tests: Ensure comprehensive coverage for all new components.
   - [x] Implement: Run linting, type checks, and refactor for clarity. Ensure mobile responsiveness.
-- [ ] Task: Conductor - User Manual Verification 'Phase 3: Polish & Standards' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 3: Polish & Standards' (Protocol in workflow.md)
 
 ## Unplanned Work & Known Issues
 - [x] **Task: Investigate node-pty Crash**

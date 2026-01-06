@@ -40,3 +40,6 @@ Ensure the codebase is clean and meets all requirements.
 - [x] **Task: UI Customization (Header Font)** 2d7283b
   - [x] Context: User requested "AI Replicator" text to use custom font `Klaxon-Crunchy.otf`, be larger, and have no underline.
   - [x] Implementation: Configured `next/font/local` and updated Header component.
+- [x] **Task: Integrate react-grab** 
+  - [x] Context: Installed `grab` for better element inspection in development.
+  - [x] Implementation: Added `next/script` to `RootLayout` targeting `unpkg.com/react-grab`.

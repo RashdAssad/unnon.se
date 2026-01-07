@@ -22,7 +22,7 @@ Focus on parsing external websites.
 - [x] **Task: Structural Analysis Logic** c03603b
   - [x] Write Tests: Verify extraction of key elements (nav, hero, footer).
   - [x] Implement: Use AI to map HTML structure into an internal metadata format.
-- [ ] Task: Conductor - User Manual Verification 'Phase 2: URL Analysis'
+- [~] Task: Conductor - User Manual Verification 'Phase 2: URL Analysis'
 
 ## Phase 3: Project Generation & Refinement
 Focus on turning metadata into code.

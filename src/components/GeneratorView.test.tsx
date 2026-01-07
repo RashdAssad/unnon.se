@@ -94,4 +94,41 @@ describe('GeneratorView', () => {
     expect(screen.getByText(/generator mode/i)).toBeInTheDocument()
     expect(screen.getByPlaceholderText(/describe the website you want to build/i)).toBeInTheDocument()
   })
+
+  test('calls Replicator API and displays result', async () => {
+    // Mock Replicator API response
+    ;(global.fetch as any).mockResolvedValue({
+      ok: true,
+      json: async () => ({ content: 'Replicated website code' })
+    })
+
+    render(<GeneratorView />)
+    
+    // Switch to Replicator
+    const replicatorTab = screen.getByRole('tab', { name: /replicator/i })
+    fireEvent.click(replicatorTab)
+
+    const input = screen.getByPlaceholderText(/enter website url to replicate/i)
+    const button = screen.getByRole('button', { name: /replicate website/i })
+
+    // Enter URL and submit
+    fireEvent.change(input, { target: { value: 'https://example.com' } })
+    fireEvent.click(button)
+
+    expect(button).toHaveTextContent(/replicating/i)
+    expect(button).toBeDisabled()
+
+    // Wait for result
+    await waitFor(() => {
+      expect(screen.getByText(/generated result/i)).toBeInTheDocument()
+    })
+
+    expect(screen.getByText(/AI Response: Replicated website code/i)).toBeInTheDocument()
+    
+    // Verify API call
+    expect(global.fetch).toHaveBeenCalledWith('/api/replicate', expect.objectContaining({
+      method: 'POST',
+      body: JSON.stringify({ url: 'https://example.com' })
+    }))
+  })
 })

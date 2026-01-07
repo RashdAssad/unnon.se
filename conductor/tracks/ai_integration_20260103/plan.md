@@ -2,7 +2,7 @@
 
 This track implements the backend intelligence of the application.
 
-## Phase 1: AI Service & Generation API
+## Phase 1: AI Service & Generation API [checkpoint: 4e30362]
 Focus on the basic prompt-to-code flow.
 
 - [x] **Task: Setup Environment & Gemini Client** e4d8f1a
@@ -11,7 +11,7 @@ Focus on the basic prompt-to-code flow.
 - [x] **Task: Implement Generation API Route** 3a9e1d2
   - [x] Write Tests: Mock Gemini response and verify API status codes.
   - [x] Implement: Create `/api/generate` to handle prompt requests.
-- [ ] Task: Conductor - User Manual Verification 'Phase 1: AI Service & Generation API'
+- [x] Task: Conductor - User Manual Verification 'Phase 1: AI Service & Generation API' 4e30362
 
 ## Phase 2: URL Analysis (Replicator Core)
 Focus on parsing external websites.

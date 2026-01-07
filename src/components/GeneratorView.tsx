@@ -12,16 +12,35 @@ type GenerationStatus = "idle" | "generating" | "completed"
 export default function GeneratorView() {
   const [prompt, setPrompt] = React.useState("")
   const [status, setStatus] = React.useState<GenerationStatus>("idle")
+  const [result, setResult] = React.useState<string | null>(null)
+  const [error, setError] = React.useState<string | null>(null)
 
   const handleGenerate = async () => {
     if (!prompt.trim()) return
 
     setStatus("generating")
+    setError(null)
     
-    // Mock simulation of generation process
-    await new Promise((resolve) => setTimeout(resolve, 2000))
-    
-    setStatus("completed")
+    try {
+      const response = await fetch("/api/generate", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ prompt }),
+      })
+
+      if (!response.ok) {
+        const data = await response.json()
+        throw new Error(data.error || "Failed to generate website")
+      }
+
+      const data = await response.json()
+      setResult(data.content)
+      setStatus("completed")
+    } catch (err: any) {
+      console.error(err)
+      setError(err.message)
+      setStatus("idle")
+    }
   }
 
   const isGenerating = status === "generating"
@@ -66,15 +85,24 @@ export default function GeneratorView() {
           </CardContent>
         </Card>
 
-        {status === "completed" && (
+        {error && (
+          <div className="p-4 text-sm text-destructive bg-destructive/10 rounded-md border border-destructive/20">
+            {error}
+          </div>
+        )}
+
+        {status === "completed" && result && (
            <div className="space-y-4">
              <div className="flex items-center justify-between">
                 <h2 className="text-xl font-semibold">Generated Result</h2>
-                <Button variant="ghost" size="sm" onClick={() => setStatus("idle")}>Clear Result</Button>
+                <Button variant="ghost" size="sm" onClick={() => {
+                  setStatus("idle")
+                  setResult(null)
+                }}>Clear Result</Button>
              </div>
              <PreviewCard 
                title="Generated Project" 
-               description={`Based on: "${prompt.substring(0, 50)}${prompt.length > 50 ? '...' : ''}"`} 
+               description={`AI Response: ${result.substring(0, 100)}...`} 
              />
            </div>
         )}

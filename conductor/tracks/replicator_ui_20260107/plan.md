@@ -11,7 +11,7 @@ Focus on the UI for URL input and mode switching.
 - [x] **Task: URL Input Form** df13f0c
   - [x] Write Tests: Verify URL validation and submission handling.
   - [x] Implement: Create a form specifically for entering a website URL.
-- [ ] Task: Conductor - User Manual Verification 'Phase 1: Replicator Input Interface'
+- [~] Task: Conductor - User Manual Verification 'Phase 1: Replicator Input Interface'
 
 ## Phase 2: Integration & Generation Flow
 Focus on connecting the frontend to the backend logic.

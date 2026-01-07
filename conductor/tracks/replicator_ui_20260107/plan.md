@@ -2,7 +2,7 @@
 
 This track implements the user interface for the Website Replicator feature and integrates it with the backend AI services.
 
-## Phase 1: Replicator Input Interface
+## Phase 1: Replicator Input Interface [checkpoint: ea1b399]
 Focus on the UI for URL input and mode switching.
 
 - [x] **Task: Mode Switcher Component** df13f0c
@@ -11,7 +11,7 @@ Focus on the UI for URL input and mode switching.
 - [x] **Task: URL Input Form** df13f0c
   - [x] Write Tests: Verify URL validation and submission handling.
   - [x] Implement: Create a form specifically for entering a website URL.
-- [~] Task: Conductor - User Manual Verification 'Phase 1: Replicator Input Interface'
+- [x] Task: Conductor - User Manual Verification 'Phase 1: Replicator Input Interface' ea1b399
 
 ## Phase 2: Integration & Generation Flow
 Focus on connecting the frontend to the backend logic.

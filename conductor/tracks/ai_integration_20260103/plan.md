@@ -5,9 +5,9 @@ This track implements the backend intelligence of the application.
 ## Phase 1: AI Service & Generation API
 Focus on the basic prompt-to-code flow.
 
-- [ ] **Task: Setup Environment & Gemini Client**
-  - [ ] Write Tests: Verify environment variable loading.
-  - [ ] Implement: Configure Gemini SDK and create a singleton client.
+- [x] **Task: Setup Environment & Gemini Client** e4d8f1a
+  - [x] Write Tests: Verify environment variable loading.
+  - [x] Implement: Configure Gemini SDK and create a singleton client.
 - [ ] **Task: Implement Generation API Route**
   - [ ] Write Tests: Mock Gemini response and verify API status codes.
   - [ ] Implement: Create `/api/generate` to handle prompt requests.

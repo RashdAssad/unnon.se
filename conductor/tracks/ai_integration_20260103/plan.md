@@ -19,9 +19,9 @@ Focus on parsing external websites.
 - [x] **Task: Implement URL Fetching & Sanitization** 36c1223
   - [x] Write Tests: Verify handling of various URL formats and error states.
   - [x] Implement: Create a utility to safely fetch HTML content.
-- [ ] **Task: Structural Analysis Logic**
-  - [ ] Write Tests: Verify extraction of key elements (nav, hero, footer).
-  - [ ] Implement: Use AI to map HTML structure into an internal metadata format.
+- [x] **Task: Structural Analysis Logic** c03603b
+  - [x] Write Tests: Verify extraction of key elements (nav, hero, footer).
+  - [x] Implement: Use AI to map HTML structure into an internal metadata format.
 - [ ] Task: Conductor - User Manual Verification 'Phase 2: URL Analysis'
 
 ## Phase 3: Project Generation & Refinement

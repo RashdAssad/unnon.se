@@ -1,6 +1,6 @@
 import { render, screen, fireEvent, waitFor } from '@testing-library/react'
 import GeneratorView from './GeneratorView'
-import { expect, test, vi, beforeEach } from 'vitest'
+import { expect, test, vi, beforeEach, describe } from 'vitest'
 
 // Mock fetch globally
 global.fetch = vi.fn()
@@ -46,7 +46,7 @@ describe('GeneratorView', () => {
     const clearButton = screen.getByRole('button', { name: /clear result/i })
     fireEvent.click(clearButton)
     expect(screen.queryByText(/generated result/i)).not.toBeInTheDocument()
-    expect(textarea).not.not.toBeDisabled()
+    expect(textarea).not.toBeDisabled()
     expect(textarea.value).toBe(prompt) // Prompt should stay
   })
 
@@ -70,5 +70,28 @@ describe('GeneratorView', () => {
 
     expect(button).not.toBeDisabled()
     expect(textarea).not.toBeDisabled()
+  })
+
+  test('switches between Generator and Replicator modes', () => {
+    render(<GeneratorView />)
+    
+    // Default mode should be Generator
+    expect(screen.getByText(/generator mode/i)).toBeInTheDocument()
+    expect(screen.getByPlaceholderText(/describe the website you want to build/i)).toBeInTheDocument()
+
+    // Switch to Replicator mode
+    const replicatorTab = screen.getByRole('tab', { name: /replicator/i })
+    fireEvent.click(replicatorTab)
+
+    expect(screen.getByText(/replicator mode/i)).toBeInTheDocument()
+    expect(screen.getByPlaceholderText(/enter website url to replicate/i)).toBeInTheDocument()
+    expect(screen.queryByPlaceholderText(/describe the website you want to build/i)).not.toBeInTheDocument()
+
+    // Switch back to Generator mode
+    const generatorTab = screen.getByRole('tab', { name: /generator/i })
+    fireEvent.click(generatorTab)
+
+    expect(screen.getByText(/generator mode/i)).toBeInTheDocument()
+    expect(screen.getByPlaceholderText(/describe the website you want to build/i)).toBeInTheDocument()
   })
 })

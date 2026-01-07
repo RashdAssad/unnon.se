@@ -5,12 +5,12 @@ This track implements the user interface for the Website Replicator feature and 
 ## Phase 1: Replicator Input Interface
 Focus on the UI for URL input and mode switching.
 
-- [ ] **Task: Mode Switcher Component**
-  - [ ] Write Tests: Verify state switching between "Generator" (Prompt) and "Replicator" (URL).
-  - [ ] Implement: Add a toggle/tab mechanism to `GeneratorView` to switch modes.
-- [ ] **Task: URL Input Form**
-  - [ ] Write Tests: Verify URL validation and submission handling.
-  - [ ] Implement: Create a form specifically for entering a website URL.
+- [x] **Task: Mode Switcher Component** df13f0c
+  - [x] Write Tests: Verify state switching between "Generator" (Prompt) and "Replicator" (URL).
+  - [x] Implement: Add a toggle/tab mechanism to `GeneratorView` to switch modes.
+- [x] **Task: URL Input Form** df13f0c
+  - [x] Write Tests: Verify URL validation and submission handling.
+  - [x] Implement: Create a form specifically for entering a website URL.
 - [ ] Task: Conductor - User Manual Verification 'Phase 1: Replicator Input Interface'
 
 ## Phase 2: Integration & Generation Flow

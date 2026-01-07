@@ -16,9 +16,9 @@ Focus on the UI for URL input and mode switching.
 ## Phase 2: Integration & Generation Flow
 Focus on connecting the frontend to the backend logic.
 
-- [ ] **Task: Replicator API Endpoint**
-  - [ ] Write Tests: Verify the endpoint handles URL inputs and returns generated code.
-  - [ ] Implement: Create `/api/replicate` (or update `/api/generate`) to use `scraper`, `analyzer`, and `scaffolder`.
+- [x] **Task: Replicator API Endpoint** c708c42
+  - [x] Write Tests: Verify the endpoint handles URL inputs and returns generated code.
+  - [x] Implement: Create `/api/replicate` (or update `/api/generate`) to use `scraper`, `analyzer`, and `scaffolder`.
 - [ ] **Task: Frontend Integration**
   - [ ] Write Tests: Verify data flow from form submission to result display.
   - [ ] Implement: Call the API on form submit and update the `PreviewCard` with the result.

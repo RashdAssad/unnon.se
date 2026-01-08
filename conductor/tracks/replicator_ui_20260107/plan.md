@@ -22,7 +22,7 @@ Focus on connecting the frontend to the backend logic.
 - [x] **Task: Frontend Integration**
   - [x] Write Tests: Verify data flow from form submission to result display.
   - [x] Implement: Call the API on form submit and update the `PreviewCard` with the result.
-- [ ] Task: Conductor - User Manual Verification 'Phase 2: Integration & Generation Flow'
+- [~] Task: Conductor - User Manual Verification 'Phase 2: Integration & Generation Flow'
 
 ## Phase 3: Preview & Refinement
 Focus on the quality of the output and user experience.

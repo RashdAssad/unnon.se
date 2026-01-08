@@ -164,6 +164,7 @@ export default function GeneratorView() {
              <PreviewCard 
                title="Generated Project" 
                description={`AI Response: ${result.substring(0, 100)}...`} 
+               content={result}
              />
            </div>
         )}

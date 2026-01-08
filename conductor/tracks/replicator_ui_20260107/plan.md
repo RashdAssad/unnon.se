@@ -27,10 +27,10 @@ Focus on connecting the frontend to the backend logic.
 ## Phase 3: Preview & Refinement
 Focus on the quality of the output and user experience.
 
-- [ ] **Task: Enhanced Preview Handling**
-  - [ ] Write Tests: Verify the preview component handles complex generated layouts.
-  - [ ] Implement: Ensure the `PreviewCard` can render the full generated page structure effectively.
-- [ ] **Task: Error Handling & feedback**
-  - [ ] Write Tests: Verify error messages for failed fetches or invalid URLs.
-  - [ ] Implement: Add toast notifications or inline errors for the Replicator flow.
-- [ ] Task: Conductor - User Manual Verification 'Phase 3: Preview & Refinement'
+- [x] **Task: Enhanced Preview Handling** 498c470
+  - [x] Write Tests: Verify the preview component handles complex generated layouts.
+  - [x] Implement: Ensure the `PreviewCard` can render the full generated page structure effectively.
+- [x] **Task: Error Handling & feedback** c6a5ba9
+  - [x] Write Tests: Verify error messages for failed fetches or invalid URLs.
+  - [x] Implement: Add toast notifications or inline errors for the Replicator flow.
+- [~] Task: Conductor - User Manual Verification 'Phase 3: Preview & Refinement'

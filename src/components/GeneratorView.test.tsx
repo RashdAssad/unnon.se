@@ -34,11 +34,12 @@ describe('GeneratorView', () => {
     expect(button).toBeDisabled()
     expect(textarea).toBeDisabled()
 
-    // 3. Wait for API and check result
+    // Wait for API and check result
     await waitFor(() => {
       expect(screen.getByText(/generated result/i)).toBeInTheDocument()
     }, { timeout: 4000 })
 
+    expect(screen.getByText(/successfully generated your website/i)).toBeInTheDocument()
     expect(screen.getByText(/AI Response: AI generated code/i)).toBeInTheDocument()
     expect(screen.getByRole('img', { name: /preview/i })).toBeInTheDocument()
 
@@ -130,5 +131,27 @@ describe('GeneratorView', () => {
       method: 'POST',
       body: JSON.stringify({ url: 'https://example.com' })
     }))
+  })
+
+  test('displays specific error for rate limiting (429)', async () => {
+    ;(global.fetch as any).mockResolvedValue({
+      ok: false,
+      json: async () => ({ error: 'Too many requests. Please try again later.' })
+    })
+
+    render(<GeneratorView />)
+    
+    const replicatorTab = screen.getByRole('tab', { name: /replicator/i })
+    fireEvent.click(replicatorTab)
+
+    const input = screen.getByPlaceholderText(/enter website url to replicate/i)
+    const button = screen.getByRole('button', { name: /replicate website/i })
+
+    fireEvent.change(input, { target: { value: 'https://busy.com' } })
+    fireEvent.click(button)
+
+    await waitFor(() => {
+      expect(screen.getByText(/too many requests/i)).toBeInTheDocument()
+    })
   })
 })

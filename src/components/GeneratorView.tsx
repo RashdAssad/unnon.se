@@ -147,15 +147,18 @@ export default function GeneratorView() {
         </Card>
 
         {error && (
-          <div className="p-4 text-sm text-destructive bg-destructive/10 rounded-md border border-destructive/20">
+          <div className="p-4 text-sm text-destructive bg-destructive/10 rounded-md border border-destructive/20 animate-in fade-in slide-in-from-top-2">
             {error}
           </div>
         )}
 
         {status === "completed" && result && (
-           <div className="space-y-4">
+           <div className="space-y-4 animate-in fade-in slide-in-from-bottom-4 duration-700">
              <div className="flex items-center justify-between">
-                <h2 className="text-xl font-semibold">Generated Result</h2>
+                <div>
+                  <h2 className="text-xl font-semibold">Generated Result</h2>
+                  <p className="text-sm text-green-600 font-medium">✨ Successfully {mode === "generator" ? "generated" : "replicated"} your website!</p>
+                </div>
                 <Button variant="ghost" size="sm" onClick={() => {
                   setStatus("idle")
                   setResult(null)

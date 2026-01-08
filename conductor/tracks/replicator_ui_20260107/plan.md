@@ -13,16 +13,16 @@ Focus on the UI for URL input and mode switching.
   - [x] Implement: Create a form specifically for entering a website URL.
 - [x] Task: Conductor - User Manual Verification 'Phase 1: Replicator Input Interface' ea1b399
 
-## Phase 2: Integration & Generation Flow
+## Phase 2: Integration & Generation Flow [checkpoint: e9df7d7]
 Focus on connecting the frontend to the backend logic.
 
 - [x] **Task: Replicator API Endpoint** c708c42
   - [x] Write Tests: Verify the endpoint handles URL inputs and returns generated code.
   - [x] Implement: Create `/api/replicate` (or update `/api/generate`) to use `scraper`, `analyzer`, and `scaffolder`.
-- [x] **Task: Frontend Integration**
+- [x] **Task: Frontend Integration** e9df7d7
   - [x] Write Tests: Verify data flow from form submission to result display.
   - [x] Implement: Call the API on form submit and update the `PreviewCard` with the result.
-- [~] Task: Conductor - User Manual Verification 'Phase 2: Integration & Generation Flow'
+- [x] Task: Conductor - User Manual Verification 'Phase 2: Integration & Generation Flow' e9df7d7
 
 ## Phase 3: Preview & Refinement
 Focus on the quality of the output and user experience.
